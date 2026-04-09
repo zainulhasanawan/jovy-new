@@ -1,4 +1,7 @@
-import { getCategoryIconNode, getVendorCategoryName } from "./categorization";
+import {
+  getCategoryIconNode,
+  getVendorCategoryName,
+} from "../../../types/dashboard/categorization";
 import { VENDOR_TAXONOMY } from "@/utils/dashboard/vendor-taxonomy";
 
 interface CategoryCoveragePillsProps {

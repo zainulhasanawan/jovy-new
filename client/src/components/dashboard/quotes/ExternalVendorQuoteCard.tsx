@@ -9,9 +9,12 @@ import {
 import { Eye, Trash2, MessageSquare, Info } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 import type { Quote } from "@/types/dashboard/schema";
-import { getCategoryIconNode, getVendorCategoryName } from "./categorization";
-import { formatPrice } from "./formatters";
-import { getQuotePriceData } from "./quote-utils";
+import {
+  getCategoryIconNode,
+  getVendorCategoryName,
+} from "../../../types/dashboard/categorization";
+import { formatPrice } from "../../../types/dashboard/formatters";
+import { getQuotePriceData } from "../../../types/dashboard/quote-utils";
 import { calculatePerGuestAllInCost } from "@/utils/dashboard/utils";
 import { VENDOR_TAXONOMY } from "@/utils/dashboard/vendor-taxonomy";
 

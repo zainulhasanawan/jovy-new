@@ -3,8 +3,8 @@ import { Eye, Trash2, MapPin, MessageSquare } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 import type { Quote } from "@/types/dashboard/schema";
 import { CategoryCoveragePills } from "./CategoryCoveragePills";
-import { formatPrice } from "./formatters";
-import { getQuotePriceData } from "./quote-utils";
+import { formatPrice } from "../../../types/dashboard/formatters";
+import { getQuotePriceData } from "../../../types/dashboard/quote-utils";
 
 interface VenueQuoteCardProps {
   quote: Quote;

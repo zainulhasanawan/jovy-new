@@ -30,19 +30,19 @@ import {
   CATEGORY_ORDER,
   getCategoryIconNode,
   getVendorCategoryName,
-} from "./categorization";
+} from "../../../types/dashboard/categorization";
 import { VENDOR_TAXONOMY } from "@/utils/dashboard/vendor-taxonomy";
-import { formatPrice } from "./formatters";
+import { formatPrice } from "../../../types/dashboard/formatters";
 import {
   toLabel,
   getQuotePriceData,
   calculateMissingServicesEstimate,
-} from "./quote-utils";
+} from "../../../types/dashboard/quote-utils";
 import type {
   AddOnLike,
   MenuOptionLike,
   WeddingProfileLike,
-} from "./quote-types";
+} from "../../../types/dashboard/quote-types";
 
 function getVendorCategoryNameLocal(categoryId: string): string {
   return getVendorCategoryName(

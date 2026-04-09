@@ -29,7 +29,7 @@ import { VenueQuoteCard } from "./VenueQuoteCard";
 import { ExternalVendorQuoteCard } from "./ExternalVendorQuoteCard";
 import { QuoteDetailModal } from "./QuoteDetailModal";
 import { QuoteCompareModal } from "./QuoteCompareModal";
-import type { ContactLike } from "./quote-types";
+import type { ContactLike } from "../../../types/dashboard/quote-types";
 
 interface QuoteComparisonProps {
   quotes: Quote[];

@@ -43,16 +43,22 @@ import {
   getCategoryIconNode,
   getVendorCategoryName,
   groupInclusionsByCategory,
-} from "./categorization";
-import { formatPrice, splitExclusionsAndRestrictions } from "./formatters";
-import { toLabel, getQuotePriceData } from "./quote-utils";
+} from "../../../types/dashboard/categorization";
+import {
+  formatPrice,
+  splitExclusionsAndRestrictions,
+} from "../../../types/dashboard/formatters";
+import {
+  toLabel,
+  getQuotePriceData,
+} from "../../../types/dashboard/quote-utils";
 import type {
   AddOnLike,
   MenuOptionLike,
   CoveredPair,
   PricingTierLike,
   WeddingProfileLike,
-} from "./quote-types";
+} from "../../../types/dashboard/quote-types";
 import { detectQuoteStructureType } from "@/utils/dashboard/utils";
 
 function getVendorCategoryNameLocal(categoryId: string): string {
