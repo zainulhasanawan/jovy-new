@@ -1,0 +1,699 @@
+/* ============================================
+   DASHBOARD PHASE 3 - CORE COMPONENTS
+   ============================================ */
+
+/* ============================================
+   BUTTON VARIANTS
+   ============================================ */
+
+/* Base button reset */
+.btn,
+button.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* Primary Button (main CTAs) */
+.btn-primary {
+  background: linear-gradient(135deg, var(--terracotta-rose), var(--rose-gold));
+  color: white;
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm), 0 0 16px rgba(212, 132, 122, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(212, 132, 122, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary Button (outlined) */
+.btn-secondary {
+  background: transparent;
+  color: var(--soft-charcoal);
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(42, 32, 53, 0.15);
+}
+
+.btn-secondary:hover {
+  background: var(--lavender-wash);
+  border-color: var(--muted-lavender);
+}
+
+.btn-secondary:active {
+  background: rgba(42, 32, 53, 0.05);
+}
+
+/* Tertiary Button (ghost/text) */
+.btn-tertiary,
+.btn-ghost {
+  background: transparent;
+  color: var(--warm-slate);
+  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: none;
+}
+
+.btn-tertiary:hover,
+.btn-ghost:hover {
+  background: var(--lavender-wash);
+  color: var(--soft-charcoal);
+}
+
+/* Accent Button (for key actions, alternative to primary) */
+.btn-accent {
+  background: var(--deep-plum);
+  color: white;
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover {
+  background: var(--soft-charcoal);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Danger Button (delete, remove) */
+.btn-danger {
+  background: transparent;
+  color: #C75050;
+  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: rgba(199, 80, 80, 0.1);
+}
+
+/* Button Sizes */
+.btn-sm {
+  font-size: 0.8125rem;
+  padding: var(--space-2) var(--space-4);
+}
+
+.btn-lg {
+  font-size: 1rem;
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Icon-only button */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--warm-slate);
+  border: 1px solid rgba(42, 32, 53, 0.1);
+}
+
+.btn-icon:hover {
+  background: var(--lavender-wash);
+  color: var(--soft-charcoal);
+  border-color: var(--muted-lavender);
+}
+
+/* ============================================
+   CARD STYLES
+   ============================================ */
+
+/* Base Card */
+.card {
+  background: var(--cloud-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(42, 32, 53, 0.05);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+/* Card with hover effect (clickable cards) */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(42, 32, 53, 0.08);
+}
+
+/* Card Padding Variants */
+.card-padding-sm {
+  padding: var(--space-4);
+}
+
+.card-padding-md {
+  padding: var(--space-6);
+}
+
+.card-padding-lg {
+  padding: var(--space-8);
+}
+
+/* Elevated Card (more prominent) */
+.card-elevated {
+  background: var(--cloud-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(42, 32, 53, 0.04);
+  box-shadow: var(--shadow-md);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass Card (for overlays or special sections) */
+.card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dark Card (AI insights, tips) */
+.card-dark {
+  background: var(--deep-plum);
+  border-radius: var(--radius-lg);
+  color: white;
+  border: none;
+}
+
+.card-dark .card-title {
+  color: white;
+}
+
+.card-dark .card-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-dark .card-label {
+  color: var(--muted-lavender);
+}
+
+/* Highlight Card (inside dark cards, like Money-Saving Tip) */
+.card-highlight {
+  background: rgba(212, 132, 122, 0.15);
+  border: 1px solid rgba(212, 132, 122, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(42, 32, 53, 0.06);
+}
+
+/* Card Body */
+.card-body {
+  color: var(--warm-slate);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(42, 32, 53, 0.06);
+}
+
+/* ============================================
+   INPUT FIELDS & FORM ELEMENTS
+   ============================================ */
+
+/* Base Input */
+.input,
+input.styled-input,
+textarea.styled-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--soft-charcoal);
+  background: var(--cloud-white);
+  border: 1.5px solid rgba(42, 32, 53, 0.12);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  transition: all 0.15s ease;
+}
+
+.input:hover,
+input.styled-input:hover {
+  border-color: rgba(42, 32, 53, 0.2);
+}
+
+.input:focus,
+input.styled-input:focus,
+textarea.styled-input:focus {
+  outline: none;
+  border-color: var(--terracotta-rose);
+  box-shadow: 0 0 0 3px rgba(212, 132, 122, 0.15);
+}
+
+.input::placeholder,
+input.styled-input::placeholder,
+textarea.styled-input::placeholder {
+  color: var(--muted-lavender);
+}
+
+.input:disabled,
+input.styled-input:disabled {
+  background: var(--lavender-wash);
+  color: var(--muted-lavender);
+  cursor: not-allowed;
+}
+
+/* Input with icon */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-lavender);
+  pointer-events: none;
+}
+
+.input-with-icon {
+  padding-left: calc(var(--space-4) + 24px);
+}
+
+/* Input Label */
+.input-label,
+.form-label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--warm-slate);
+  margin-bottom: var(--space-2);
+}
+
+/* Input Helper Text */
+.input-helper {
+  font-size: 0.8125rem;
+  color: var(--muted-lavender);
+  margin-top: var(--space-1);
+}
+
+/* Input Error State */
+.input-error {
+  border-color: #C75050;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(199, 80, 80, 0.15);
+}
+
+.error-message {
+  font-size: 0.8125rem;
+  color: #C75050;
+  margin-top: var(--space-1);
+}
+
+/* Textarea */
+textarea.styled-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Select / Dropdown */
+.select,
+select.styled-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--soft-charcoal);
+  background: var(--cloud-white);
+  border: 1.5px solid rgba(42, 32, 53, 0.12);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  padding-right: var(--space-10);
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B617B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+}
+
+.select:hover,
+select.styled-select:hover {
+  border-color: rgba(42, 32, 53, 0.2);
+}
+
+.select:focus,
+select.styled-select:focus {
+  outline: none;
+  border-color: var(--terracotta-rose);
+  box-shadow: 0 0 0 3px rgba(212, 132, 122, 0.15);
+}
+
+/* ============================================
+   SELECTION CHIPS / PILLS
+   ============================================ */
+
+/* Chip base */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1.5px solid transparent;
+}
+
+/* Chip - Unselected */
+.chip-default {
+  background: var(--cloud-white);
+  color: var(--warm-slate);
+  border-color: rgba(42, 32, 53, 0.1);
+}
+
+.chip-default:hover {
+  background: var(--lavender-wash);
+  border-color: var(--muted-lavender);
+  color: var(--soft-charcoal);
+}
+
+/* Chip - Selected */
+.chip-selected,
+.chip.selected,
+.chip.active {
+  background: linear-gradient(135deg, var(--terracotta-rose), var(--rose-gold));
+  color: white;
+  border-color: transparent;
+}
+
+/* Chip - Outline variant */
+.chip-outline {
+  background: transparent;
+  color: var(--warm-slate);
+  border-color: rgba(42, 32, 53, 0.15);
+}
+
+.chip-outline:hover {
+  background: var(--lavender-wash);
+}
+
+.chip-outline.selected {
+  background: transparent;
+  color: var(--terracotta-rose);
+  border-color: var(--terracotta-rose);
+}
+
+/* Chip with remove button */
+.chip-removable {
+  padding-right: var(--space-2);
+}
+
+.chip-remove {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.chip-remove:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Chip Group */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ============================================
+   CHECKBOXES & RADIO BUTTONS
+   ============================================ */
+
+/* Custom Checkbox */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(42, 32, 53, 0.2);
+  border-radius: var(--radius-sm);
+  background: var(--cloud-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--muted-lavender);
+}
+
+.checkbox.checked,
+.checkbox[data-checked="true"],
+input[type="checkbox"]:checked + .checkbox {
+  background: var(--terracotta-rose);
+  border-color: var(--terracotta-rose);
+}
+
+.checkbox.checked svg,
+.checkbox-check {
+  color: white;
+  width: 14px;
+  height: 14px;
+}
+
+.checkbox-label {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--soft-charcoal);
+}
+
+/* Custom Radio Button */
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(42, 32, 53, 0.2);
+  border-radius: 50%;
+  background: var(--cloud-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.radio:hover {
+  border-color: var(--muted-lavender);
+}
+
+.radio.checked,
+.radio[data-checked="true"],
+input[type="radio"]:checked + .radio {
+  border-color: var(--terracotta-rose);
+}
+
+.radio.checked::after,
+.radio[data-checked="true"]::after,
+input[type="radio"]:checked + .radio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--terracotta-rose);
+}
+
+.radio-label {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--soft-charcoal);
+}
+
+/* ============================================
+   TOGGLE SWITCH
+   ============================================ */
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  background: rgba(42, 32, 53, 0.15);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.toggle.active,
+.toggle[data-checked="true"] {
+  background: var(--terracotta-rose);
+}
+
+.toggle.active::after,
+.toggle[data-checked="true"]::after {
+  left: 22px;
+}
+
+.toggle-label {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--soft-charcoal);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+
+/* Badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* Badge variants */
+.badge-success {
+  background: rgba(139, 168, 136, 0.15);
+  color: #5D8A58;
+}
+
+.badge-warning {
+  background: rgba(232, 165, 152, 0.2);
+  color: #C4716A;
+}
+
+.badge-error {
+  background: rgba(199, 80, 80, 0.1);
+  color: #C75050;
+}
+
+.badge-info {
+  background: rgba(155, 143, 168, 0.15);
+  color: var(--warm-slate);
+}
+
+.badge-neutral {
+  background: var(--lavender-wash);
+  color: var(--warm-slate);
+}
+
+/* Coverage status badges */
+.badge-included {
+  background: rgba(139, 168, 136, 0.15);
+  color: #5D8A58;
+}
+
+.badge-missing {
+  background: rgba(232, 165, 152, 0.2);
+  color: #C4716A;
+}
+
+.badge-available {
+  background: rgba(155, 143, 168, 0.15);
+  color: var(--warm-slate);
+}
+
+/* Pill-style count badge */
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--lavender-wash);
+  color: var(--warm-slate);
+}
+
+.count-badge-primary {
+  background: var(--terracotta-rose);
+  color: white;
+}
+

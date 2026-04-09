@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 
 import { DemoSection } from "../components/landing/DemoSection";
 import { FaqSection } from "../components/landing/FaqSection";
@@ -10,12 +9,8 @@ import { LandingFooter } from "../components/landing/LandingFooter";
 import { LandingNavbar } from "../components/landing/LandingNavbar";
 import { PainPointsSection } from "../components/landing/PainPointsSection";
 import { PricingSection } from "../components/landing/PricingSection";
+import { useFoundingUsers } from "../hooks/useFoundingUsers";
 import { useUser } from "../hooks/useUser";
-
-type FoundingUsersResponse = {
-  remaining: number;
-  total: number;
-};
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,18 +25,7 @@ export default function LandingPage() {
       "Jovy - Wedding Intelligence Platform | Compare Vendors & Plan Smarter";
   }, []);
 
-  const { data: foundingUsers } = useQuery<FoundingUsersResponse>({
-    queryKey: ["founding-users-remaining"],
-    queryFn: async () => {
-      const response = await fetch("/api/founding-users/remaining");
-      if (!response.ok) {
-        return { remaining: 0, total: 0 };
-      }
-      return response.json();
-    },
-    retry: false,
-    staleTime: 30_000,
-  });
+  const { data: foundingUsers } = useFoundingUsers();
 
   const foundingRemaining = foundingUsers?.remaining ?? 0;
   const showFounding = foundingRemaining > 0;

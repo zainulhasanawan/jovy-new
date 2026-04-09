@@ -1,0 +1,50 @@
+/* Ethereal Intelligence Typography Classes */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--deep-plum);
+}
+
+.text-heading {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--soft-charcoal);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  color: var(--soft-charcoal);
+  line-height: 1.6;
+}
+
+.text-secondary {
+  font-family: var(--font-body);
+  color: var(--warm-slate);
+}
+
+.text-muted {
+  font-family: var(--font-body);
+  color: var(--muted-lavender);
+}
+
+.text-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-slate);
+}
+
+.text-accent {
+  color: var(--terracotta-rose);
+}
+
+.text-success {
+  color: var(--sage);
+}
+
+.text-warning {
+  color: var(--soft-coral);
+}

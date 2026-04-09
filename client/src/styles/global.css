@@ -1,3 +1,13 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import "./referenceStyles/dashboard-sidebar-layout.css";
+@import "./referenceStyles/dashboard-phase2-header-tabs.css";
+@import "./referenceStyles/dashboard-phase3-core-components.css";
+@import "./referenceStyles/compare-page.css";
+@import "./referenceStyles/compare-modals.css";
+@import "./referenceStyles/foundation-typography.css";
+@import "./referenceStyles/foundation-interactions.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +20,42 @@
   --color-primary: #0f172a;
   --color-primary-foreground: #f8fafc;
   --color-muted-foreground: #64748b;
+
+  --cloud-white: #ffffff;
+  --lavender-wash: #faf8fc;
+  --deep-plum: #2a2035;
+  --soft-charcoal: #4a4458;
+  --warm-slate: #6b5e7a;
+  --muted-lavender: #b8a9c9;
+  --terracotta-rose: #d4847a;
+  --rose-gold: #c4918a;
+  --sage: #81b29a;
+  --soft-coral: #e8a598;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body:
+    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(42, 32, 53, 0.06);
+  --shadow-md: 0 6px 18px rgba(42, 32, 53, 0.08);
+  --shadow-lg: 0 10px 28px rgba(42, 32, 53, 0.12);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.12);
+
   --radius: 0.75rem;
   --font-sans:
     "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -92,6 +138,39 @@ a {
 
 .app-main {
   padding: 1.25rem;
+}
+
+.top-bar-action {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md, 8px);
+  background: transparent;
+  border: 1px solid rgba(42, 32, 53, 0.1);
+  color: var(--warm-slate, #6b5e7a);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.top-bar-action:hover {
+  background: var(--lavender-wash, #faf8fc);
+  color: var(--soft-charcoal, #4a4458);
+}
+
+.user-menu {
+  border: 0;
+  background: transparent;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .gallery-screen,
@@ -419,25 +498,87 @@ a {
   margin-top: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .app-header {
-    display: grid;
-    grid-template-columns: 1fr;
+@layer base {
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: "Geist Variable", sans-serif;
   }
-
-  .app-nav {
-    flex-wrap: wrap;
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
   }
-
-  .auth-card {
-    padding: 1.25rem;
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
   }
-
-  .auth-title {
-    font-size: 1.7rem;
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
   }
-
-  .not-found-actions {
-    flex-direction: column;
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  html {
+    font-family: var(--font-sans);
   }
 }

@@ -1,0 +1,17 @@
+/* Badge hover effect */
+.badge-hover:hover {
+  filter: brightness(0.95);
+}
+
+/* Focus ring for accessibility */
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(129, 178, 154, 0.4);
+}
+
+/* Responsive: dialogs and sheets scroll on small screens */
+@media (max-width: 640px) {
+  [role="dialog"] {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+}

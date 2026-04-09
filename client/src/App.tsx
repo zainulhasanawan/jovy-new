@@ -5,11 +5,12 @@ import { Toaster } from "react-hot-toast";
 
 import { queryClient } from "./lib/queryClient";
 import LandingPage from "./pages/Landing";
-import Gallery from "./pages/Gallery";
+import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
 import PreviewPage from "./pages/Preview";
+import PricingPage from "./pages/Pricing";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 import ProtectedRoute from "./ui/ProtectedRoute";
@@ -22,16 +23,17 @@ function Router() {
       <Route path="/signup" element={<SignupPage />} />
 
       <Route element={<ProtectedRoute />}>
+        <Route path="/pricing" element={<PricingPage />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:page" element={<Dashboard />} />
+
         <Route element={<AppLayout />}>
-          <Route path="/dashboard" element={<Gallery />} />
-          <Route path="/dashboard/:page" element={<Gallery />} />
           <Route path="/preview/*" element={<PreviewPage />} />
           <Route
             path="/gallery"
             element={<Navigate replace to="/dashboard" />}
           />
-
-          {/* <Route path="/pricing" element={<Pricing />} /> */}
         </Route>
       </Route>
 

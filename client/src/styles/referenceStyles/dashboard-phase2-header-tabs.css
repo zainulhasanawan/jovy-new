@@ -1,0 +1,355 @@
+/* ============================================
+   DASHBOARD PHASE 2 - HEADER & TABS STYLING
+   ============================================ */
+
+/* Header Bar */
+.header-bar,
+.top-header,
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  background: var(--cloud-white);
+  border-bottom: 1px solid rgba(42, 32, 53, 0.06);
+}
+
+/* Home/back button */
+.header-back-btn,
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--warm-slate);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.header-back-btn:hover,
+.home-btn:hover {
+  background: var(--lavender-wash);
+  color: var(--soft-charcoal);
+}
+
+/* Admin/settings button */
+.admin-btn,
+.settings-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--warm-slate);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.admin-btn:hover,
+.settings-btn:hover {
+  background: var(--lavender-wash);
+  color: var(--soft-charcoal);
+}
+
+/* Add Quote button */
+.add-quote-btn {
+  background: linear-gradient(135deg, var(--terracotta-rose), var(--rose-gold));
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: none;
+  box-shadow: var(--shadow-sm), 0 0 16px rgba(212, 132, 122, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.add-quote-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(212, 132, 122, 0.3);
+}
+
+/* Tab Navigation - Deep Plum Active State */
+.tabs,
+.tab-navigation,
+.dashboard-tabs {
+  display: flex;
+  gap: var(--space-1);
+  background: var(--cloud-white);
+  padding: var(--space-1);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(42, 32, 53, 0.06);
+  margin-bottom: var(--space-6);
+}
+
+.tab,
+.tab-item,
+.tab-button {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--warm-slate);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.tab:hover,
+.tab-item:hover,
+.tab-button:hover {
+  color: var(--soft-charcoal);
+  background: var(--lavender-wash);
+}
+
+/* ACTIVE TAB - Deep Plum instead of green */
+.tab.active,
+.tab-item.active,
+.tab-button.active,
+.tab[aria-selected="true"],
+.tab-item[aria-selected="true"],
+.tab[data-state="active"],
+[role="tab"][data-state="active"] {
+  background: var(--deep-plum) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Override shadcn tabs styling */
+[data-radix-collection-item][data-state="active"] {
+  background: var(--deep-plum) !important;
+  color: white !important;
+}
+
+/* Wedding Info Card */
+.wedding-info-card,
+.couple-card,
+.dashboard-hero {
+  background: var(--cloud-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(42, 32, 53, 0.04);
+  margin-bottom: var(--space-6);
+}
+
+/* Couple names */
+.couple-names,
+.wedding-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--deep-plum);
+  margin-bottom: var(--space-2);
+}
+
+/* Date and venue info */
+.wedding-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--warm-slate);
+  font-size: 0.9375rem;
+}
+
+.wedding-meta svg {
+  color: var(--muted-lavender);
+}
+
+/* Days countdown */
+.countdown-number {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 3.5rem;
+  color: var(--deep-plum);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--warm-slate);
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: var(--space-8);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+  border-top: 1px solid rgba(42, 32, 53, 0.06);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stat-value {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--soft-charcoal);
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--warm-slate);
+}
+
+/* Status dot */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.confirmed {
+  background: var(--sage);
+}
+
+.status-dot.pending {
+  background: var(--soft-coral);
+}
+
+/* Update Details button */
+.update-details-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--warm-slate);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--lavender-wash);
+  border: 1px solid rgba(42, 32, 53, 0.06);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.update-details-btn:hover {
+  background: var(--cloud-white);
+  border-color: var(--muted-lavender);
+}
+
+/* Main Content Area Background */
+.dashboard-content,
+.page-content {
+  background: var(--lavender-wash);
+  min-height: 100vh;
+  padding: var(--space-6);
+}
+
+/* Content Cards */
+.content-card,
+.overview-card,
+.info-card {
+  background: var(--cloud-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(42, 32, 53, 0.04);
+}
+
+.content-card:hover,
+.overview-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Card titles */
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--deep-plum);
+  margin-bottom: var(--space-4);
+}
+
+/* Highlight numbers */
+.highlight-number {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--terracotta-rose);
+}
+
+.highlight-label {
+  font-size: 0.875rem;
+  color: var(--warm-slate);
+}
+
+/* Attention Section */
+.attention-section,
+.priority-section {
+  margin-top: var(--space-6);
+}
+
+.attention-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.attention-icon {
+  color: var(--soft-coral);
+}
+
+.attention-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--soft-charcoal);
+}
+
+.priority-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft-coral);
+  margin-bottom: var(--space-3);
+}
+
+/* Jovy Logo */
+.jovy-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.jovy-logo-j,
+.jovy-logo-vy {
+  color: var(--deep-plum);
+}
+
+.jovy-logo-o {
+  color: var(--terracotta-rose);
+}
+

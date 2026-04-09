@@ -9,3 +9,25 @@ export const queryClient = new QueryClient({
     },
   },
 });
+
+export async function apiRequest(
+  method: string,
+  url: string,
+  body?: unknown,
+): Promise<Response> {
+  const response = await fetch(url, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: body !== undefined ? JSON.stringify(body) : undefined,
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `API request failed: ${method} ${url} (${response.status})`,
+    );
+  }
+
+  return response;
+}
